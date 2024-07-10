@@ -46,7 +46,7 @@ def draw_heat_map():
     upper_quantile_weight = df['weight'].quantile(0.975)
 
     # 11
-    df_heat = df[(df['height'] >= lower_quantile_height) &
+    df_heat = df[(df['ap_lo'] <= df['ap_hi'])&(df['height'] >= lower_quantile_height) &
                 (df['height'] <= upper_quantile_height) & 
                 (df['weight'] >= lower_quantile_weight) & 
                 (df['weight'] <= upper_quantile_weight)]
